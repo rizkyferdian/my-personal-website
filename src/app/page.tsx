@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center">
           <div className="text-center md:text-left md:w-1/2">
             <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
-              Hi🙋‍♂️, I&#39;m <span className="text-gray-800">Rizky Ferdian Prasetyo</span>
+              Hi🙋‍♂️, I'm <span className="text-gray-800">Rizky Ferdian Prasetyo</span>
             </h1>
             <p className="mt-4 text-gray-600 md:text-lg">
               An Informatics graduate passionate about Cybersecurity, Software Development, and Technology Writing.
