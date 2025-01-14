@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ShieldCheck, Code, Server } from 'lucide-react';
 import { FaUniversity, FaLaptopCode, FaBriefcase, FaPaintBrush, FaCode } from 'react-icons/fa';
 import { MdSchool } from 'react-icons/md';
+import Image from 'next/image';
 
 
 
@@ -20,8 +21,10 @@ export default function Hero() {
         <div className="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center">
           <div className="text-center md:text-left md:w-1/2">
             <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
-              Hi🙋‍♂️, I'm <span className="text-gray-800">Rizky Ferdian Prasetyo</span>
+              Hi🙋‍♂️, I&apos;m<span className="text-gray-800"> Rizky Ferdian Prasetyo</span>
+
             </h1>
+
             <p className="mt-4 text-gray-600 md:text-lg">
               An Informatics graduate passionate about Cybersecurity, Software Development, and Technology Writing.
             </p>
@@ -60,10 +63,12 @@ export default function Hero() {
             </div>
           </div>
           <div className="md:w-1/2 flex ml-44 justify-center">
-            <img
+            <Image
               src="/image_profile.jpg"
               alt="Rizky Ferdian Prasetyo"
               className="w-72 h-72 rounded-full object-cover shadow-lg"
+              width={288} // Gantilah dengan ukuran yang sesuai
+              height={288} // Gantilah dengan ukuran yang sesuai
             />
           </div>
         </div>
@@ -116,7 +121,7 @@ export default function Hero() {
               Golang & Express.js
             </p>
             <p className="text-gray-600 mb-6">
-              From building robust APIs to developing scalable backend services, I leverage Golang and Express.js to create efficient and high-performance server-side solutions. Whether you're building from scratch or scaling up, I can help.
+              From building robust APIs to developing scalable backend services, I leverage Golang and Express.js to create efficient and high-performance server-side solutions. Whether you are building from scratch or scaling up, I can help.
             </p>
 
           </div>
@@ -141,7 +146,8 @@ export default function Hero() {
                   <FaUniversity className="text-blue-400 text-2xl" />
                   <div className="text-gray-600">
                     <p className="font-bold text-gray-800">Telkom University</p>
-                    <p>Bachelor of Technology - BTech, Informatika (2020 - 2024)</p>
+                    <p>Bachelor of Technology - BTech, Informatika (2020 &ndash; 2024)</p>
+
                   </div>
                 </div>
               </li>
@@ -203,7 +209,7 @@ export default function Hero() {
                     <p className="font-bold text-gray-800">Frontend Developer</p>
                     <p>Integra Inovasi Indonesia (Jul 2019 - Oct 2019)</p>
                     <ul className="list-disc ml-5 mt-2 space-y-1">
-                      <li>Developed the website for Integra Innovation Indonesia's office.</li>
+                      <li>Developed the website for Integra Innovation Indonesia office.</li>
                       <li>Implemented an online internship registration feature using HTML, CSS, and Bootstrap.</li>
                       <li>Designed attractive and professional website visuals.</li>
                     </ul>
@@ -213,32 +219,33 @@ export default function Hero() {
             </ul>
           </div>
         </div>
-
-        <div className="container mx-auto px-4 py-10 " id="portfolio">
-          <h1 className="text-3xl font-bold mb-12">
-            My Portofolio's
-          </h1>
+        <div className="container mx-auto px-4 py-10" id="portfolio">
+          <h1 className="text-3xl font-bold mb-12">My Portfolio</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 id: 1,
                 title: "Cyber Security Enthusiast",
-                description: "Experienced in cybersecurity, including incident management, security alert handling, and infrastructure troubleshooting. Focused on protecting data and systems from security threats.",
-                imgSrc: "/cyber.png",
-                link: "https://drive.google.com/drive/folders/15lv1PaZ8xc5Fp-v5RDAwbG2u9B53Xdu9?usp=sharing",
+                description:
+                  "Experienced in cybersecurity, including incident management, security alert handling, and infrastructure troubleshooting. Focused on protecting data and systems from security threats.",
+                imgSrc: "/cyber.png", // Pastikan gambar ada di folder public
+                link:
+                  "https://drive.google.com/drive/folders/15lv1PaZ8xc5Fp-v5RDAwbG2u9B53Xdu9?usp=sharing",
               },
               {
                 id: 2,
                 title: "Developer",
-                description: "Proficient in building web applications using Laravel, Express.js, Golang, Next.js, and React.js. Experienced in both backend and frontend development.",
-                imgSrc: "/developer.png",
+                description:
+                  "Proficient in building web applications using Laravel, Express.js, Golang, Next.js, and React.js. Experienced in both backend and frontend development.",
+                imgSrc: "/developer.png", // Pastikan gambar ada di folder public
                 link: "https://github.com/rizkyferdian",
               },
               {
                 id: 3,
                 title: "UI/UX Design",
-                description: "Experienced in crafting visually appealing and functional user interfaces. Skilled in designing intuitive layouts that enhance user experience across a variety of platforms and applications.",
-                imgSrc: "design.png",
+                description:
+                  "Experienced in crafting visually appealing and functional user interfaces. Skilled in designing intuitive layouts that enhance user experience across a variety of platforms and applications.",
+                imgSrc: "/design.png", // Pastikan gambar ada di folder public
                 link: "https://dribbble.com/rizkyfdyan",
               },
             ].map((project) => (
@@ -246,22 +253,26 @@ export default function Hero() {
                 key={project.id}
                 className="bg-white border border-gray-300 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
-                <img
+                <Image
                   src={project.imgSrc}
                   alt={project.title}
+                  width={400} // Ukuran lebar gambar
+                  height={200} // Ukuran tinggi gambar
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
                   <h2 className="text-lg font-medium text-gray-900 mb-2">{project.title}</h2>
                   <p className="text-sm text-gray-600 mb-4">{project.description}</p>
                   <Button>
-                    <a href={project.link}>
-                      Check Portofolio</a></Button>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Check Portfolio
+                    </a>
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
-        </div >
+        </div>
 
       </div >
       <footer className="bg-gray-900 text-white py-8">
